@@ -1,0 +1,34 @@
+'''
+Sudha Chandran (born 27 September 1965) is an Indian actress and Bharatanatyam dancer
+ known for her works in Hindi, Tamil and Telugu language films and television. 
+ Chandran is best known for her roles as Mayuri in Mayuri (1985) for which 
+ she won the National Film Award – Special Jury Award, as Ramola Sikand 
+ in Kaahin Kissii Roz (2001 series), as Yamini Singh, as Chitradevi in 
+ Deivam Thandha Veedu (2013 series), and as Seema Gujral in Naagin 1, 2, 3 and 6 (2015 series). 
+
+
+'''
+fullname="sudhachandran"
+birth_date=27
+birth_month="sep"
+birth_year=1965
+profession="actress,dancer"
+dancer="bharatanatyam"
+known_languages="hindi,tamil,telugu"
+best_role="mayuri"
+Award_for_mayuri_role="national film award"
+acting_series="mayuri,kaahin kissii,Deivam thandha vedu,nagini"
+character_names_in_series="mayuri,yamini singh,chitradevi,seema gujral"
+nagini_sequences=1,2,3 ,6
+
+print(fullname)
+print(birth_date)
+print(birth_month)
+print(birth_year)
+print(profession)
+print(known_languages)
+print(best_role)
+print(Award_for_mayuri_role)
+print(acting_series)
+print(character_names_in_series)
+print(nagini_sequences)
