@@ -1,0 +1,18 @@
+def calculate_gst(amount,gst_rate):
+    gst_amount=(amount/100)*gst_rate
+    return gst_amount
+def calculate_total_amount(amount,gst_rate):
+    gst_amount=calculate_gst(amount,gst_rate)
+    total_amount=amount+gst_amount
+    return total_amount
+def main():
+    print("GST calculator")
+    print("--------------")
+    amount=float(input("enter the original amount:RS"))
+    gst_rate=float(input("enter the GST rate(in %):"))
+    gst_amount=calculate_gst(amount,gst_rate)
+    total_amount=calculate_total_amount(amount,gst_rate)
+    print(f"\n GST Amount:RS {gst_rate:.2f}")
+    print(f"Total amount:RS {total_amount:.2f}")
+if __name__=="__main__":
+    main()
