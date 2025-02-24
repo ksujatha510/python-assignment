@@ -1,0 +1,38 @@
+# python-assignmentvegetables={
+    "carrot":20
+    "tomatos":30
+    "spinach":15
+    "potato":40
+    "cabbage":25
+}
+your_choice=input("enter your order":)
+if your_choice in vegetables:
+   print(f" yes!.. {your_choice} is available")
+   quantity=int(input(f"how many kgs you want:"))
+   if your_choice=="carrot":
+      total=vegetables["carrot"]*quantity
+      print(f" your total bill is {total}")
+   elif your_choice=="tomatos":
+      total=vegetables["tomatos"]*quantity
+      print(f" your total bill is {total}")
+   elif your_choice=="spinach":
+      total=vegetables["spinach"]*quantity
+      print(f" your total bill is {total}")
+    elif your_choice=="potato":
+      total=vegetables["potato"]*quantity
+      print(f" your total bill is {total}")
+    elif your_choice=="cabbage":
+      total=vegetables["cabbage"]*quantity
+      print(f" your total bill is {total}")
+else;
+    print(f" sorry your_choice is not availble")
+buy_more=input("do you want buy more?(yes/no):")
+if buy_more.lower()=="yes":
+   print(f"please choose another vegetables")
+else:
+    print(f" thank you for shopping")
+
+     
+    
+
+     
