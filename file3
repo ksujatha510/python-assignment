@@ -1,0 +1,23 @@
+'''
+Avul Pakir Jainulabdeen Abdul Kalam  (15 October 1931 ;27 July 2015) was an Indian aerospace scientist 
+and statesman who  as the president of India from 2002 to 2007. Born and raised in a Muslim family
+ in Rameswaram, Tamil Nadu, he studied physics and aerospace engineering.
+
+
+'''
+name=input("enter your name:")
+fullname=input("enter your fullname:")
+birth_date=int(input("enter your birth date:"))
+birth_month=input("enter your birth month:")
+birth_year=int(input("enter your birth year:"))
+profession=input("enter your profession:")
+served_role_of_india=input("enter your served role of india:")
+duration_of_served_role=input("enter your duration of served role:")
+religion=input("enter your religion:")
+birth_place=input("enter your birth place:")
+birth_state=input("enter your birth state:")
+studies=input("enter your studies:")
+
+print(f"{name} {fullname} born {birth_date} {birth_month} {birth_year}\n was an indian \n {profession} who as the {served_role_of_india} \n from {duration_of_served_role} born and raised in a{religion} ,{birth_place} ,{birth_state} \n he {studies}\n")
+
+
