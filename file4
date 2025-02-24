@@ -1,0 +1,54 @@
+dresses={
+    "tops":1200,
+    "punjabis":2000,
+    "lehenga":3000,
+    "jeans":1000,
+    "chudidars":1000,
+}
+your_order=input("enter  your_order:")
+if your_order in dresses :
+    print(f"yes!...{your_order} is available")
+    quantity=int(input(f" how many {your_order} you want:"))
+    if your_order=="tops":
+        total=dresses["tops"]*quantity 
+        print(f"your total bill is {total}")
+    elif your_order=="punjabis":
+        total=dresses["punjabis"]*quantity 
+        print(f"your total bill is {total}")
+    elif your_order=="lehenga":
+        total=dresses["lehenga"]*quantity 
+        print(f"your total bill is {total}")
+    elif your_order=="jeans":
+        total=dresses["jeans"]*quantity
+        print(f"your total bill is {total}")
+    elif your_order=="chudidars":
+        total=dresses["chudidars"]*quantity 
+        print(f"your total bill is {total}")
+else:
+    print(f" not available")
+accessories_choice=input(" do you want to buy accessories?(yes/no):")
+scarf_price=20
+jewllary_price=50
+shoes_price=100
+bands_price=35
+if accessories_choice.lower()=="yes":
+    print("available accessories:")
+    print(f"1.scarf:{scarf_price}")
+    print(f"2.jewllary:{jewllary_price}")
+    print(f"3.shoes:{shoes_price}")
+    print(f"4.bands:{bands_price}")
+accessories_choice=int(input("which accessory do you want to buy:"))
+if accessories_choice==1:
+    print(f"you have chosen:scarf")
+    print(f"price:{scarf_price}")
+elif accessories_choice==2:
+    print(f"you have chosen:jewllary")
+    print(f"{jewllary_price}")
+elif accessories_choice==3:
+    print(f"you have chosen:shoes")
+    print(f"price:{shoes_price}") 
+elif accessories_choice==4:
+    print(f"you have chosen:bands")
+    print(f"price:{bands_price}")    
+else:
+    print("not have any choice")
