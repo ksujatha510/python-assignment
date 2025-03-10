@@ -1,8 +1,8 @@
 # python-assignmentvegetables={
-    "carrot":20
-    "tomatos":30
-    "spinach":15
-    "potato":40
+    "carrot":20,
+    "tomatos":30,
+    "spinach":15,
+    "potato":40,
     "cabbage":25
 }
 your_choice=input("enter your order":)
@@ -18,10 +18,10 @@ if your_choice in vegetables:
    elif your_choice=="spinach":
       total=vegetables["spinach"]*quantity
       print(f" your total bill is {total}")
-    elif your_choice=="potato":
+   elif your_choice=="potato":
       total=vegetables["potato"]*quantity
       print(f" your total bill is {total}")
-    elif your_choice=="cabbage":
+   elif your_choice=="cabbage":
       total=vegetables["cabbage"]*quantity
       print(f" your total bill is {total}")
 else;
