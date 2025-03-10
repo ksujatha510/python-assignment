@@ -1,0 +1,123 @@
+def chennai():
+    print("chennai package is 10k per person")
+    var=input("do you want to book this package:")
+    if var=="yes":
+        per_person=10000
+        fullname=input("enter your fullname")
+        age=int(input("enter your age"))
+        train_number=int(input("enter your train number"))
+        train_name=input("enter your train number")
+        departure=input("enter your departure")
+        date=int(input("enter your date"))
+        platform=input("enter your platform:")
+        blocks=["a1,a2,a3,a4,b1,b2"]
+        print(blocks)
+        print("enter your block number: ")
+        if blocks:
+            print("yes,this block is availble")
+        else:
+            print("sorry,this block not availble now")
+        seat_number=int(input("enter your seat number:"))
+        
+        arrival_time=int(input("enter your time"))
+        number_of_persons=int(input("enter number of persons:"))
+        total_amount=per_person*number_of_persons
+        if total_amount>=10000:
+           offer_total_amount=total_amount-1000
+           print(f"hi {fullname} you are booked goa trip your bill is more than 1k .so 1000 less and you have to pay amount is{offer_total_amount}")
+           print("thanks for booking")
+        else:
+           print(f"hi {fullname} you're booked goa trip and you have to pay total amount is {total_amount}")
+           print("thanks for booking")
+    else:
+        print("thank you")     
+def mumbai():
+    print("mumbai package is 1k per person")
+    var=input("do you want to book this package:")
+    if var=="yes":
+        per_person=1000
+        fullname=input("enter your fullname")
+        train_number=int(input("enter your train number"))
+        train_name=input("enter your train number")
+        departure=input("enter your departure")
+        date=int(input("enter your date"))
+        platform=input("enter your platform:")
+        blocks=["a1,a2,a3,a4,b1,b2"]
+        print(blocks)
+        print("enter your block number: ")
+        if blocks:
+            print("yes,this block is availble")
+        else:
+            print("sorry,this block not availble now")
+        seat_number=int(input("enter your seat number:"))
+       
+        arrival_time=int(input("enter your time"))
+        age=int(input("enter your age"))
+        number_of_persons=int(input("enter number of persons:"))
+        total_amount=per_person*number_of_persons
+        if total_amount>=5000:
+           offer_total_amount=total_amount-500
+           print(f"hi {fullname} you are booked goa trip your bill is more than 5k .so 500 less and you have to pay amount is{offer_total_amount}")
+           print("thanks for booking")
+        else:
+           print(f"hi {fullname} you're booked goa trip and you have to pay total amount is {total_amount}")
+           print("thanks for booking")   
+    else:
+        print("thank you")   
+
+def delhi():
+    print("delhi package is 1500 per person")
+    var=input("do you want to book this package:")
+    if var=="yes":
+        per_person=1500
+        fullname=input("enter your fullname:")
+        age=int(input("enter your age:"))
+        train_number=int(input("enter your train number:"))
+        train_name=input("enter your train name:")
+        departure=input("enter your departure:")
+        date=int(input("enter your date:"))
+        platform=input("enter your platform:")
+        blocks=["a1,a2,a3,a4,b1,b2"]
+        print(blocks)
+        print("enter your block number: ")
+        if blocks:
+            print("yes,this block is availble")
+        else:
+            print("sorry,this block not availble now")
+        seat_number=int(input("enter your seat number:"))
+        arrival_time=int(input("enter your time"))
+        number_of_persons=int(input("enter number of persons:"))
+        total_amount=per_person*number_of_persons
+        if total_amount>=5000:
+           offer_total_amount=total_amount-300
+           print(f"hi {fullname} you are booked goa trip your bill is more than 5k .so  300 less and you have to pay amount is{offer_total_amount}")
+           print("thanks for booking")
+        else:
+           print(f"hi {fullname} you're booked goa trip and you have to pay total amount is {total_amount}")
+           print("thanks for booking")    
+    else:
+        print("thank you")
+def main():
+    print("***welcome tours and travels***")
+    print("1.chennai")
+    print("2.mumbai")
+    print("3.delhi")
+    choose_number=int(input("enter your choice:"))
+    if choose_number==1:
+        chennai()
+    elif choose_number==2:
+        mumbai() 
+    elif choose_number==3:
+        delhi()
+    else:
+        print("invalid choice")
+main()
+def cancel_tickets():
+    choose_number=int(input("enter your choice:"))
+    if choose_number==1:
+       print("your booking is cancelled")
+    else:
+        print("booking is not found")
+cancel_tickets()
+
+
