@@ -1,0 +1,32 @@
+import pandas as pd
+df=pd.read_csv("survey_details.csv")
+s_data=df.iloc[0,1]
+s_data=df.iloc[0]
+print(s_data)
+
+print("/nfirst 5 rows:")
+print(df.iloc[0:5])
+
+print("/nlast5rows:")
+print(df.iloc[-5])
+
+
+print("/nfirst 2 columns:")
+print(df.iloc[:,0:2])
+
+print("/nlast2 columns:")
+print(df.iloc[:,-2:])
+
+print("/nRows 1-3,columns 1-2:")
+print(df.iloc[1:4,1:3])
+
+numeric_cols=df.select_dtypes(include=["int64","float64"]).columns
+categorical_cols=df.select_dtypes(include=["object"]).columns
+
+print("/nNumeric columns:")
+print(numeric_cols)
+print("/nCategorical Dataframe:")
+print(categorical_cols)
+
+
+
