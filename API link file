@@ -1,0 +1,42 @@
+import requests
+import json
+url="http://demo8855728.mockable.io/mydummy_data"
+try:
+   response=requests.get(url)
+   if response.status_code==200:
+       get_data=json.loads(response.text)
+       print(get_data)
+       fruit_name=get_data["fruit_name"]
+       fruit_price=get_data["fruit_price"]
+       quantity=int(input(f"how many kgs of {fruit_name} you want: "))
+       total_amount=fruit_price*quantity 
+       gst_amount=(fruit_price*18)/100
+       final_bill_amount=total_amount*gst_amount
+       print(f" fruit_name :{fruit_name}")
+       print(f"fruit_price:{fruit_price}")
+       print(f"quantity:{quantity}")
+      
+       print(f"total_amount:{total_amount}")
+       print(f"gst_amount(18%):{gst_amount}")
+       print(f"final_bill_amount:{final_bill_amount}")
+       choose_format=input("do you want to send a mail or generate bill?(bill/email):")
+       if choose_format.lower()=="bill":
+            print("/nbill:")
+            print(f" fruit_name :{fruit_name}")
+            print(f"fruit_price:{fruit_price}")
+            print(f"quantity:{quantity}")
+            print (f"gst_amount:{gst_amount}")
+            print(f"total_amount:{total_amount}")
+       elif choose_format.lower()=="email":
+            email=input("enter your email:")
+            print("/nbill sent to your email!")
+       else:
+            print(f"{response.status_code}")
+except requests.exceptions.RequestException as e:
+  print(f"Exception:{e}")
+
+
+
+                     
+      
+
