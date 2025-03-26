@@ -1,0 +1,70 @@
+import mysql.connector
+from datetime import datetime
+username="your-username"
+password="your_password"
+host="your_host"
+database="your_database"
+cnx=mysql.connector.connect(
+    user=username,
+    password=password,
+    host=host,
+    database=database
+)
+cursor=cnx.cursor()
+cursor.excute('''
+    create table if not exists trains(
+    train_number int primary key,
+    train_name varchar(255),
+    source varchar(255),
+    destination varchar(255),
+    departure_time time,
+    arrival_time time
+    )
+''')
+def add_train():
+    train_number=int(input("enter train number:"))
+    train_name=input("enter train number:")
+    source=input("enter source station")
+    destination=input("enter destination station:")
+    departure_time=input("enter your departure time(HH:MM:SS):")
+    arrival_time=input("enter arrival time(HH:MM:SS):")
+    query="insert into trains(train_number,train_name,source,destination,departure_time,arrival_time)VALUES(%s,%s,%s,%s,%s,%s)"
+    cursor.execute(query,(train_number,train_name,source,destination,departure_time,arrival_time))
+    cnx.commit()
+def book_ticket():
+    train_number=int(input("enter train number"))
+    passenger_name=input("enter passenger name:")
+    journey_date=input("enter journey date(YYYY-MM-DD:")
+    seat_number=input("enter seat number:")
+    query="INSERT INTO bookings(train_number,passenger_name,journey_date,seat_number)VALUES(%s,%s,%s,%s)"
+    cursor.execute(query,(train_number,passenger_name,journey_date,seat_number))
+    cnx.commit()
+def view_bookings():
+    query="SELECT * FROM bookings"
+    cursor.execute(query) 
+    bookings=cursor.fetchall()
+    for booking in bookings:
+        print("Booking ID:",booking[0])
+        print("train number:",booking[1])
+        print("passenger name:",booking[2])       
+        print("journey date:",booking[3])
+        print("seat number:",booking[4])
+print("---------------")
+while true:
+    print("1.Add train")
+    print("2.book ticket")
+    print("3.view bookings")
+    print("4.exit")
+    choice=input("enter your choice:")
+    if choice=="1":
+        add_train()
+    elif choice=="2":
+        book_ticket()
+    elif choice=="3":
+        view_bookings()
+    elif choice=="4":
+        break
+    else:
+        print("Invalid choice.please try again.")
+cursor.close()
+cnx.close
