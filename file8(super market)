@@ -1,0 +1,80 @@
+import mysql.connector
+import mysql.connector
+from datetime import datetime
+username="your-username"
+password="your_password"
+host="your_host"
+database="your_database"
+cnx=mysql.connector.connect(
+    user=username,
+    password=password,
+    host=host,
+    database=database
+)
+cursor=cnx.cursor()
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS products
+(
+        product_id INT PRIMARY KEY,
+        product_name Varchar(255),
+        price Decimal(10,2),
+        gst_percentage Decimal(5,2)
+    )
+)'''
+curser.execute(''' 
+    Create Table if not exists bills(
+        bill_id int auto_increment primary key,
+        product_id int,
+        quantity int,
+        total_cost decimal(10,2),
+        gst_amount decimal(10,2),
+        total_amount decimal(10,2),
+        foreign key(product_id)
+references products(product_id)
+     )
+''')   
+def add_product():
+     product_id=int(input("enter product ID:"))
+     product_name=input("enter p[roduct name:")
+     price=float(input("enter price:"))
+     gst_percentage=float(input("enter gst percentage:"))
+     query="insert into products(product_id,product_name,price,gst_percentage)values(%s,%s,%s,%s)"
+     cursor.execute(query,(prouct_id,product_name,price,gst_percentage)) 
+     cnx.commit()
+     def generate_bill():
+     product_id=int(nput("enter product_id:"))
+     quantity=int(input("enter quantity:"))
+     query="select price,gst_percentage from products where product_id==%s" 
+     cursor.execute(query,(product_id,))
+     product_details=cursor.fetchone()
+     if product_details:
+     price=product_details[0]
+     gst_percentage=product_details[1]
+     total_cost=price*quantity
+     gst_amount=(total_cost*gst_percentage)/100
+     total_amount=total_cost+gst_amount
+     query="insert into bills(product_id,quantity,total_cost,gst_amount,total_amount)valuies(%s,%s,%s,%s,%s)"
+     cursor.execute(query,(product_id,quantity,total_cost,gst_amount,total_amount))
+     cnx.commit()
+     print("bill generated succesfully")
+     print("total cost:rs",total_cost)
+     print("gst amount:rs",gst amount)
+     print("total amount:rs",total_amount)
+     else:
+     print("product not found")
+     while True:
+         print(("1.Add product"))
+         print("2.Generate bill")
+         print("3.Exit")
+         choice= imput("enter your choice:")
+        if choice=="1":
+            add_product()
+        elif choice=="2":
+            generate_bill()
+        elif choice=="3":
+            break
+        else:
+             print("invalid choice.please try again.")
+    cursor.close()
+    cnx.close()
+        
